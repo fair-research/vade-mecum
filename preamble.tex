@@ -1,0 +1,152 @@
+\usepackage[letterpaper,margin=1.00in]{geometry}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amsmath,amssymb}
+\usepackage{times}
+\usepackage{booktabs}
+\usepackage{framed,url}
+\usepackage{paralist}
+\usepackage{listings}
+\usepackage[colorlinks,linkcolor=blue, citecolor=blue]{hyperref}
+\usepackage{doi} 	% For making DOI's clickable in bibliography
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{pdfsync}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{bbm}
+\usepackage{verbatim} % Allows for comment environment
+\usepackage{wrapfig}
+\usepackage{pdfpages}           % For inserting pdf pages and colors
+\usepackage{mdwlist}
+\usepackage{refcheck}           % For checking references
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{outline}
+\usepackage{xspace}
+\usepackage{paralist}
+\usepackage{pgfgantt}
+\usepackage{pifont}
+\usepackage{lipsum}
+%\usepackage[normalem]{ulem} % added package to get strikeout font type (\sout{})
+
+\usepackage{mdframed}
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+  innertopmargin=0pt,
+  innerbottommargin=0pt,
+  splittopskip=0pt,
+  splitbottomskip=0pt
+]{siderules}
+
+\newenvironment{myitemize}
+{\begin{list}{{\small\ding{226}}}{
+\topsep=0mm
+\leftmargin=6mm
+\labelwidth=3mm
+\itemsep=0em
+\labelsep=2mm
+}}{\end{list}}
+
+%\begin{list}{label code}{body code}
+
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  leftline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+  innertopmargin=0pt,
+  innerbottommargin=0pt,
+  splittopskip=0pt,
+  splitbottomskip=0pt
+]{nlsiderules}
+
+
+\usepackage[belowskip=-4pt,aboveskip=0pt, font={small,it}]{caption}
+
+\usepackage[explicit]{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{#1}[{\titlerule[0.8pt]}]
+\titlespacing{\section}{0pt}{*1.7}{*1.25}
+\titlespacing{\subsection}{0pt}{*1.25}{*0.15}
+\titleformat{\subsection}[runin]{\bfseries}{\thesubsection}{1em}{#1}[~~]
+\titleformat{\subsubsection}[runin]{\slshape}{\thesubsubsection}{1em}{#1}[~~]
+\titlespacing{\subsubsection}{0pt}{*0.105}{*1.00}
+%\titlespacing{\subsubsection}{0pt}{*0.105}{*0.50}
+\titleformat{\paragraph}[runin]{\slshape}{\theparagraph}{1em}{#1}[.]
+\titlespacing{\paragraph}{0pt}{*0.105}{*1.00}
+
+\setlength{\intextsep}{-1ex} % remove extra space above and below in-line float
+\setlength{\abovecaptionskip}{-1ex} % remove extra space above float caption
+\setlength{\belowcaptionskip}{-0ex} % remove extra space below float caption
+
+%\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+
+%\usepackage{titlesec}
+%\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{1em}{}[.~~]
+%\titleformat{\subsubsection}[runin]{\normalfont\itshape}{\thesubsubsection}{1em}{}[.~~]
+
+% The * version of titlespacing removes the indent on the first paragraph of a section
+\titlespacing*{\section}{0pt}{*0.8}{*0.5}
+\titlespacing*{\subsection}{0pt}{*1}{*0.15}
+\titlespacing*{\subsubsection}{0pt}{*1}{*0.15}
+\newcommand{\subsubsubsection}[1]{\vspace{1pt} \noindent \textbf{#1}}
+\usepackage{array,booktabs,tabularx}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3} 
+
+\newcommand{\sout}[1]{\textcolor{blue}{Strike: #1}} % For working version
+
+\newcommand{\pagebudget}[1]{\textcolor{blue}{#1}} % For working version
+%\newcommand{\pagebudget}[1]{} % In final version
+
+%\renewcommand{\cite}[1]{\citepri{#1}}
+
+\newcommand{\itemsskip}{\vspace*{10pt}}
+\newcommand{\tinyskip}{\vspace*{2pt}}
+
+\epstopdfDeclareGraphicsRule{.gif}{png}{.png}{convert gif:#1 png:\OutputFile}
+\AppendGraphicsExtensions{.gif}
+
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+
+\newcommand{\zapspace}{\topsep=0pt\partopsep=0pt\itemsep=0pt\parskip=0pt}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\newcommand\code[1]{{\tt \footnotesize #1}}
+
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    belowcaptionskip=1\baselineskip,
+    basicstyle=\footnotesize\ttfamily,
+    showstringspaces=false,
+    breaklines=true,
+    frame=tb,
+		captionpos=t,
+    literate=
+     *{:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+
+

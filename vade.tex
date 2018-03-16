@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+
+\input preamble
+
+\newdimen\tlx
+\newdimen\tlx
+\newdimen\brx
+\newdimen\bry
+
+\newif\iffinal
+
+% Un-comment this line to see proposal without comments
+%\finaltrue
+
+\iffinal
+    \newcommand\ian[1]{}
+\else
+    \newcommand\ian[1]{{\color{red}[Ian: #1]}}
+ \fi
+
+\newif\iffancy
+
+% Un-comment this line to see proposal for distribution
+\fancytrue
+
+\begin{document}
+
+
+
+The related concepts of FAIR and reproducible research.
+
+
+\section{Why FAIR?}
+
+It makes you more productive, because first of all you are making results findable, accessible, etc. by the future you.
+
+It makes your lab more productive ... FAIR by YOU (and your team).
+
+It makes your research more visible.
+
+It's fun, once you get the hang of it...
+
+\ian{We could include here some counter-arguments to why NOT fair}
+
+You might be mocked.
+
+You might be scooped.
+
+It's too time-consuming.
+
+\section{10 simple rules}
+
+10 simple rules for reproducible computational research defined by Sandve et al.~\cite{sandve2013ten}:
+
+Basically all 
+
+\subsection{For every result, keep track of how it was produced} 
+We preserve workflows and assign Minids to workflow results.
+
+\subsection{Avoid manual data manipulation steps} 
+We encode all data manipulation steps in either Galaxy workflows or R scripts.
+
+\subsection{Archive the exact versions of all external programs used} 
+We create a Docker container with versions of the tools used in the analysis, 
+and generate Minids for the Docker file and Docker image of the container.
+
+\subsection{Version control all custom scripts} 
+We maintain our programs in GitHub, which supports versioning,
+and provide Minids for the versions used.
+
+\subsection{Record all intermediate results, when possible in standardized formats}
+
+\subsection{For analyses that include randomness, note underlying random seeds} 
+
+
+
+\subsection{Always store raw data behind plots} 
+
+
+
+\subsection{Generate hierarchical analysis output, allowing layers of increasing detail to be inspected} 
+
+\subsection{Connect textual statements to underlying results} 
+
+Your paper includes the startling conclusion that ``the answer to the ultimate question is 42." 
+Of course, if you rely on some authority in making that statement, you would cite that authority~\cite{Adams}.
+Similarly, if that result is obtained via some computational analysis, you should describe how it was obtained.
+
+\ian{We'd add: And any number that appears in a paper!}
+
+\subsection{Provide public access to scripts, runs, and results} 
+
+\end{document}
+
+
