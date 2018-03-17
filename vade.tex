@@ -14,51 +14,107 @@
 
 \iffinal
     \newcommand\ian[1]{}
+    \newcommand\carl[1]{}
 \else
     \newcommand\ian[1]{{\color{red}[Ian: #1]}}
+    \newcommand\carl[1]{{\color{blue}[Carl: #1]}}
  \fi
 
 \newif\iffancy
 
 % Un-comment this line to see proposal for distribution
-\fancytrue
+%\fancytrue
+
 
 \begin{document}
+\title{FAIR Research: A Vade Mecum}
+\author{}
+\date{}
+\maketitle
 
+\section{Introduction}
 
+Do you want your research to contribute to knowledge?
+Do you want your work to be useful to others?
+Do you want your work today to be useful to ``future you": yourself a year from now?
+If your answer to any of these questions is ``yes," 
+then you should want to organize your work so that its products are
+\textbf{F}indable, \textbf{A}ccessible, \textbf{I}nteroperable, and \textbf{R}eusable: 
+that is, so that they are \textbf{FAIR}.
+This document is intended as a handy guide---a \emph{vade mecum}---to  
+methods that you can use to achieve these goals.
 
-The related concepts of FAIR and reproducible research.
+\ian{A few lines of philosophy: simple, straightforward, informal.... no best way for all people and 
+all circumstances, but simple methods that can be make a difference. (Need to circumscribe to computational somehow?)}
 
+% See http://qresp.org
 
 \section{Why FAIR?}
 
-It makes you more productive, because first of all you are making results findable, accessible, etc. by the future you.
+Others have spent much time and ink explaining the importance of the FAIR principle~\cite{wilkinson16},
+citing, for example, the purported reproducibility crisis in research and the need to democratize access to the
+results of research. 
+Those motivations are important, but if you're like us, 
+you probably care care even more about getting your paper or proposal out before its deadline tumbles under the weight of those that follow. 
+Thus, we'll focus here on more self-serving reasons for FAIR:
 
-It makes your lab more productive ... FAIR by YOU (and your team).
+% Point to the moral tone of the word FAIR :)
 
-It makes your research more visible.
+\begin{itemize}
+\item
+\emph{It makes you more productive.}
+%We find it helpful to bear in mind that the first consumer for FAIR research is ourselves.
+ because first of all you are making results useful by the future you.
 
-It's fun, once you get the hang of it...
+\item
+\emph{It makes your lab more productive.} 
 
-\ian{We could include here some counter-arguments to why NOT fair}
+\item
+\emph{It makes your research more visible.}
 
-You might be mocked.
+\item
+\emph{It's fun, once you get the hang of it.} 
+Perhaps this is just us, but we find that ...
+\end{itemize}
 
-You might be scooped.
+We'd also like to address some excuses that we hear for ... 
 
-It's too time-consuming.
+\begin{itemize}
+\item
+``I'll be scooped."
 
-\section{10 simple rules}
+\item
+``I don't have time."
 
-10 simple rules for reproducible computational research defined by Sandve et al.~\cite{sandve2013ten}:
+\item
+``I'll be mocked."
+ 
+\end{itemize}
 
-Basically all 
+
+\section{Ten simple rules}
+
+Geir Sandve and colleagues defined 10 simple rules for reproducible computational research~\cite{sandve2013ten}.
 
 \subsection{For every result, keep track of how it was produced} 
+
+
 We preserve workflows and assign Minids to workflow results.
 
 \subsection{Avoid manual data manipulation steps} 
+
+Surely the biggest obstacle to FAIR research must be the quick scaling performed on a calculator, 
+the manual edit to a data file's format, 
+or the cut and paste from a table. 
+You record the results, but a week later you are hard pressed to recall what exactly was done.
+There's a gap in your logic, and if you made a mistake, that mistake is invisible.
+Like a pothole in a highway, its enough to run your well-oiled machine off the road.
+
+Write a script.
 We encode all data manipulation steps in either Galaxy workflows or R scripts.
+Sometimes, a shell script is sufficient.
+
+
 
 \subsection{Archive the exact versions of all external programs used} 
 We create a Docker container with versions of the tools used in the analysis, 
@@ -76,6 +132,8 @@ and provide Minids for the versions used.
 
 \subsection{Always store raw data behind plots} 
 
+%When you launched on a career in research, 
+%did you ever imagine that you would find yourself reverse engineering 
 
 
 \subsection{Generate hierarchical analysis output, allowing layers of increasing detail to be inspected} 
@@ -83,12 +141,16 @@ and provide Minids for the versions used.
 \subsection{Connect textual statements to underlying results} 
 
 Your paper includes the startling conclusion that ``the answer to the ultimate question is 42." 
-Of course, if you rely on some authority in making that statement, you would cite that authority~\cite{Adams}.
+Of course, if you relied on some authority in making that statement, you would cite that authority~\cite{Hitch}.
 Similarly, if that result is obtained via some computational analysis, you should describe how it was obtained.
+Perhaps, for example, the number 42 is the mean of XXX. 
 
-\ian{We'd add: And any number that appears in a paper!}
 
-\subsection{Provide public access to scripts, runs, and results} 
+\subsection{Provide public access to scripts, runs, and results}
+
+
+\bibliographystyle{plain}
+\bibliography{refs}
 
 \end{document}
 
